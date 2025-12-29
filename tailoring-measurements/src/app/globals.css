@@ -1,0 +1,89 @@
+/* Removed @tailwind base; @tailwind components; @tailwind utilities; */
+
+/* Keep only plain/custom CSS so PostCSS/Tailwind build step won't try to resolve utilities */
+
+/* Plain global styles (no Tailwind @layer/@apply) */
+
+body {
+  color: #111827; /* tailwind gray-900 */
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Measurement input */
+.measurement-input {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 1px solid #D1D5DB; /* gray-300 */
+  border-radius: 0.5rem; /* rounded-lg */
+  outline: none;
+  transition: background-color .15s, border-color .15s, box-shadow .15s;
+}
+.measurement-input:focus {
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.25); /* focus ring */
+  border-color: #3B82F6; /* blue-500 */
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #2563EB; /* blue-600 */
+  color: #ffffff;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color .15s;
+}
+.btn-primary:hover { background-color: #1D4ED8; }
+
+.btn-secondary {
+  border: 1px solid #D1D5DB;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: background-color .15s;
+  background-color: transparent;
+}
+.btn-secondary:hover { background-color: #F9FAFB; }
+
+/* Reusable card */
+.app-card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.06);
+}
+
+/* Sidebar visual */
+.sidebar {
+  min-width: 18rem;
+  padding: 1.25rem;
+  border-right: 1px solid rgba(226,232,240,0.8);
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+}
+
+/* Header sticky */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+/* small utilities */
+.border-subtle { border-color: rgba(226,232,240,0.8); }
+
+/* Print */
+@media print {
+  .no-print { display: none !important; }
+  body { font-size: 12pt; }
+  .measurement-form-print { break-inside: avoid; }
+}
